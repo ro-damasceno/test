@@ -16,7 +16,7 @@ Caso ainda não possua o composer em sua máquina, instale-o seguindo as [instru
 
 No diretório raiz do projeto, execute o comando:
 
-`<base_dir>/assessment-backend$ composer install`
+`<base_dir>/test$ composer install`
 
 Depois de instalado o projeto, você pode executa o comando para iniciar o servidor:
 
@@ -26,14 +26,14 @@ Depois de instalado o projeto, você pode executa o comando para iniciar o servi
 
 Crie o banco de dados da aplicação e configure os dados de acesso no arquivo .env.
 
-`
+```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=local_db
 DB_USERNAME=root
 DB_PASSWORD=we23we23
-`
+```
 
 Execute o comando para criar as tabelas no banco de dados:
 
