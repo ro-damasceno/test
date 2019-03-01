@@ -18,13 +18,9 @@ No diretório raiz do projeto, execute o comando:
 
 `<base_dir>/test$ composer install`
 
-Depois de instalado o projeto, você pode executa o comando para iniciar o servidor:
-
-`php artisan serve`
-
 ## Passo 2: Criando o banco de dados
 
-Crie o banco de dados da aplicação e configure os dados de acesso no arquivo .env.
+Crie seu banco de dados para a aplicação e configure os dados de acesso no arquivo .env.
 
 ```
 DB_CONNECTION=mysql
@@ -37,6 +33,22 @@ DB_PASSWORD=we23we23
 
 Execute o comando para criar as tabelas no banco de dados:
 
-`
-php artisa migrate
-`
+`php artisa migrate`
+
+## Passo 3: Instalando o Laravel Passport
+
+Instale o Laravel passport para efetuar as autenticações via api.
+
+`php artisan passport:install`
+
+`php artisan cache:clear`
+
+## Passo 4: Inicie o servidor
+
+Agora você pode executa o comando para iniciar o servidor:
+
+`php artisan serve`
+
+Você pode acessar a aplicação angular através da uri: /app.
+*http://localhost:8000/app*
+
