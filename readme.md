@@ -49,6 +49,5 @@ Agora você pode executa o comando para iniciar o servidor:
 
 `php artisan serve`
 
-Você pode acessar a aplicação angular através da uri: /app.
-*http://localhost:8000/app*
+Você pode acessar a aplicação laravel na url *http://localhost:8000* e a aplicação angular na url *http://localhost:8000/app*.
 
