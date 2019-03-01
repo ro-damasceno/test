@@ -33,7 +33,7 @@ DB_PASSWORD=we23we23
 
 Execute o comando para criar as tabelas no banco de dados:
 
-`php artisa migrate`
+`php artisan migrate`
 
 ## Passo 3: Instalando o Laravel Passport
 
