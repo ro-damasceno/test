@@ -1,0 +1,55 @@
+<div class="mainhead-container">
+    <div class="mainhead">
+        <button class="mr-3" mat-icon-button (click)="nav1.toggle()">
+            <mat-icon>reorder</mat-icon>
+        </button>
+
+        <a style="cursor: pointer">
+            <h4 class="m-0">Connect Parts</h4>
+        </a>
+
+        <!-- This fills the remaining space of the current row -->
+        <span class="mr-auto"></span>
+
+        <button mat-icon-button [matMenuTriggerFor]="userMenu">
+            <mat-icon class="mat-icon">account_circle</mat-icon>
+        </button>
+        <mat-menu #userMenu="matMenu" style="z-index: 999" yPosition="below" [overlapTrigger]="false">
+            <button (click)="navigateToProfile()" mat-menu-item>
+                <mat-icon>person</mat-icon>
+                <span>Perfil</span>
+            </button>
+            <button (click)="logout()" mat-menu-item>
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Sair</span>
+            </button>
+        </mat-menu>
+    </div>
+</div>
+
+<mat-sidenav-container class="app-main">
+
+    <!--SIDENAV 1-->
+    <mat-sidenav style="background-color: rgba(182, 182, 183, 0.03); border-right: 1px solid #e0e0e0;" #nav1 opened mode="side">
+        <div class="menu-spacer"></div>
+        <div style="min-width: 240px;">
+            <div class="py-2">
+                <ng-container *ngFor="let item of mainMenu">
+                    <div mat-ripple class="menu-item position-relative">
+                        <a class="px-4" [route]="[item.route]" [class.active]="isActive(item.code)">
+                            <mat-icon class="mr-3" mat-list-icon>{{item.icon}}</mat-icon>
+                            <span class="mr-3">{{item.name}}</span>
+                        </a>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="mat-sidenav-content p-3">
+        <router-outlet></router-outlet>
+        <div class="loading-layer" *ngIf="isLoading">
+            <mat-progress-bar [mode]="'indeterminate'" style="position: fixed; top:56px; left:0;"></mat-progress-bar>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

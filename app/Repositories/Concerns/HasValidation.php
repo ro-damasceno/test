@@ -41,6 +41,9 @@ trait HasValidation {
 	 */
 	protected function validate (array $attributes, $model = null) {
 
+		if ($model) {
+			$attributes = $model->fill ($attributes)->getAttributes ();
+		}
 		$validator = Validator::make($attributes, $this->rules ($model), $this->messages ());
 
 		$this->withValidator ($validator);

@@ -1,0 +1,52 @@
+
+.error-box {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+.error-box .error-body {
+  padding-top: 5%;
+}
+
+.error-box .error-title {
+  font-size: 210px;
+  font-weight: 600;
+  text-shadow: 4px 4px 0 #fff, 6px 6px 0 #343a40;
+  line-height: 210px;
+}
+
+.text-uppercase {
+  text-transform: uppercase!important;
+}
+
+.btn-effect {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  z-index: 1;
+  will-change: opacity,transform;
+  transition: all .1s ease-out;
+}
+
+.btn-rounded {
+  border-radius: 60px;
+  padding: 7px 18px;
+}
+
+.btn-back {
+  color: #fff !important;
+  background-color: #8bc34a;
+  border-color: #8bc34a;
+}
+
+.title-purple {
+  color: #0c0c0c !important;
+}

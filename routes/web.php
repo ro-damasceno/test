@@ -11,7 +11,12 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+Route::any ('app/{any?}', function(){
+	return view ('angular-app/index');
+})->where('any', '.*');
 
 Auth::routes();
 

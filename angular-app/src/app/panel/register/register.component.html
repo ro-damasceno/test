@@ -1,0 +1,40 @@
+<mat-card id="login-card" class="p-4">
+    <mat-card-title class="text-center">
+        <h5 class="py-4">Cadastrar nova conta</h5>
+    </mat-card-title>
+
+    <mat-card-content>
+        <form #form="ngForm">
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Name" type="text" name="name" required [(ngModel)]="user.name" autocomplete="false">
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+                <input matInput placeholder="E-mail" type="email" name="email" required [(ngModel)]="user.email" autocomplete="false">
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Senha" type="password" name="password" required [(ngModel)]="user.password" autocomplete="false">
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Confirmação de senha" type="password" name="c_password" required [(ngModel)]="c_password" autocomplete="false">
+            </mat-form-field>
+
+            <div class="row mt-4">
+
+                <div class="col-auto mr-auto">
+                    <button mat-button color="primary" type="button" (click)="navToLogin()">Log in</button>
+                </div>
+
+                <div class="col-auto">
+                    <button mat-raised-button color="primary" (click)="register()" [disabled]="form.invalid">Efetuar login</button>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+
+    <div class="loading-layer" *ngIf="isLoading">
+        <mat-progress-bar [mode]="'indeterminate'" style="position: fixed; top:0; left:0;"></mat-progress-bar>
+    </div>
+</mat-card>

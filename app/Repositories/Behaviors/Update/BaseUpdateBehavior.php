@@ -27,7 +27,6 @@ abstract class BaseUpdateBehavior {
 	 * @return \Illuminate\Database\Eloquent\Model
 	 */
 	public function update($id, array $attributes) {
-
 		$model = $this->repository->getQueryBuilder()->findOrFail ($id);
 		$model->update ($this->repository->withUpdateAttributes ($attributes));
 

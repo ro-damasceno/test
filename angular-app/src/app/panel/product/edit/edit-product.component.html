@@ -1,0 +1,54 @@
+<div class="position-relative">
+    <div *ngIf="isLoading" style="height: 100%;" class="gc-loading-shade-page">
+        <mat-progress-bar [mode]="'indeterminate'"></mat-progress-bar>
+    </div>
+</div>
+<mat-card class="position-relative" *ngIf="product">
+
+    <mat-card-title>
+        <div class="row align-items-center">
+            <div class="col-auto mt-1 pr-0">
+                <mat-icon>local_offer</mat-icon>
+            </div>
+            <div class="col">
+                {{!!product.getKey() ? 'Edit' : 'New'}} Product
+            </div>
+        </div>
+    </mat-card-title>
+
+    <mat-card-content>
+        <form [formGroup]="productForm" >
+            <mat-form-field class="w-100">
+                <input matInput formControlName="sku" [(ngModel)]="product.sku" #productSKU placeholder="SKU">
+                <mat-hint align="end">{{productSKU.value.length}} / 45</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+                <input matInput formControlName="name" [(ngModel)]="product.name" #productName placeholder="Name">
+                <mat-hint align="end">{{productName.value.length}} / 45</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+                <textarea matInput formControlName="description" [(ngModel)]="product.description" #productName placeholder="Description"></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="w-100">
+                <input matInput formControlName="price" [(ngModel)]="product.price" #productName placeholder="Price">
+                <mat-hint align="start">Valid format example: 99.99</mat-hint>
+            </mat-form-field>
+
+            <div class="d-flex mt-3">
+                <button class="mr-auto" *ngIf="!!product.getKey()" (click)="remove()" mat-button color="warn">
+                    Remover
+                </button>
+
+                <button
+                    [disabled]="!productForm.valid"
+                    (click)="save()"
+                    mat-raised-button color="primary"
+                > Salvar
+                </button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

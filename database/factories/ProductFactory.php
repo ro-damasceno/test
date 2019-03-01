@@ -15,7 +15,7 @@ use Faker\Generator as Faker;
 
 $factory->define(\App\ProductModel::class, function (Faker $faker) {
 	return [
-		'sku'  	  	  => $faker->postcode,
+		'sku'  	  	  => substr (uniqid (), 0, 20),
 		'name'  	  => $faker->text(45),
 		'description' => $faker->text,
 		'price' 	  => $faker->numberBetween (10, 9999)

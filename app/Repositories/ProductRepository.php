@@ -10,7 +10,7 @@ class ProductRepository extends BaseRepository {
 		parent::__construct ();
 		$this->getReader ()
 			->setFindableAttributes ('name', 'sku')
-			->setSortableAttributes ('name', 'sku');
+			->setSortableAttributes ('name', 'sku', 'price');
 	}
 
 	/**

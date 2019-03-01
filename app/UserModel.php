@@ -3,12 +3,12 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Passport\HasApiTokens;
 
 class UserModel extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable;
 
 	protected $table = 'users';
 

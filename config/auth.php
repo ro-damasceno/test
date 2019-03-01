@@ -41,10 +41,9 @@ return [
             'provider' => 'users',
         ],
 
-        'api' => [
-            'driver' => 'token',
+        'api-users' => [
+            'driver'   => 'passport',
             'provider' => 'users',
-            'hash' => false,
         ],
     ],
 
