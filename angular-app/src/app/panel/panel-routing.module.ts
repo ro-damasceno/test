@@ -26,6 +26,11 @@ let routes = [
         },
         children: [
             {
+                path: '',
+                pathMatch: 'full',
+                redirectTo: 'products'
+            },
+            {
                 path: 'products',
                 loadChildren: './product/product.module#ProductModule',
             }
